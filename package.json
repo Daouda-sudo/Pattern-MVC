@@ -1,0 +1,26 @@
+{
+  "name": "Dady Ndaw",
+  "version": "1.0.0",
+  "description": "Creare un'applicazione con il pattern MVC in Node.js e Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daouda-sudo/Pattern-MVC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Daouda-sudo/Pattern-MVC/issues"
+  },
+  "homepage": "https://github.com/Daouda-sudo/Pattern-MVC#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1"
+  }
+}
