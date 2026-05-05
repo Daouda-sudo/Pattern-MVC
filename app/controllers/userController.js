@@ -4,12 +4,12 @@ exports.home = (req, res) => {
   res.render('index');
 };
 exports.listUsers = (req, res) => {
-  const users = User.findAll();
-  res.render('users', { users });
+  const users = User.findAll(); //prende dati dal model
+  res.render('users', { users }); //li mostra con la view
 };
 exports.createUser = (req, res) => {
-  const { name, email, immagine } = req.body;
-  User.create(name, email);
+  const { name, email, imgLink } = req.body;
+  User.create(name, email, imgLink);
   res.redirect('/users');
 };
 exports.deleteUser = (req, res) => {
