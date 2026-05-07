@@ -6,19 +6,30 @@
   <form action="/users" method="POST">
     <input type="text" name="name" placeholder="Nome" required>
     <input type="email" name="email" placeholder="Email" required>
-    <input type="url" name="imgLink" placeholder="Link" required>
+    <input type="url" name="imgLink" placeholder="Immagine" required>
+    <input type="text" name="prezzo" placeholder="Prezzo" required>
+    <input type="text" name="numero" placeholder="Numero" required>
     <button type="submit">Aggiungi</button>
   </form>
   <ul>
     <% users.forEach(user => { %>
       <li>
-        <%= user.name %> - <%= user.email %> - <img src="<%= user.imgLink %>" width="20%" height="20%">
+        <%= user.name %> - <%= user.email %> - <img src="<%= user.imgLink %>" width="20%" height="20%"> - <%= user.prezzo %> - <%= user.numero %>
         <form action="/users/delete/<%= user.id %>" method="POST" style="display:inline;">
           <button type="submit">Elimina</button>
+          </form>
+        <form action="/users/add/<%= user.id %>/<%= user.numero %>" method="POST" style="display:inline;">
+          <button type="submit">Aggiungi 1</button>
+          </form>
+        <form action="/users/subtract/<%= user.id %>/<%= user.numero %>" method="POST" style="display:inline;">
+          <button type="submit">Sottrai 1</button>
+        </form>  
+        <form action="/users/totale/<%= user.id %>" method="GET" style="display:inline;">
+          <button type="submit">Totale</button>
         </form>
       </li>
     <% }) %>
   </ul>
   <a href="/">Torna alla home</a>
 </body>
-</html&gt
+</html>

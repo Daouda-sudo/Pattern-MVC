@@ -8,8 +8,8 @@ exports.listUsers = (req, res) => {
   res.render('users', { users }); //li mostra con la view
 };
 exports.createUser = (req, res) => {
-  const { name, email, imgLink } = req.body;
-  User.create(name, email, imgLink);
+  const { name, email, imgLink, prezzo, numero } = req.body;
+  User.create(name, email, imgLink, prezzo, numero);
   res.redirect('/users');
 };
 exports.deleteUser = (req, res) => {
@@ -17,3 +17,23 @@ exports.deleteUser = (req, res) => {
   User.delete(id);
   res.redirect('/users');
 };
+
+exports.addOne = (req, res) => {
+ const {numero} = req.body;
+ const { id } = req.params;
+ User.addOne(id);
+ res.redirect('/users');
+}
+
+exports.subtractOne = (req, res) => {
+  const {numero} = req.body;
+  const { id } = req.params;
+  User.subtractOne(id);
+  res.redirect('/users');
+ }
+
+ exports.totale = (req, res) => {
+  const { id } = req.params;
+  const totale = User.totale(id);
+  res.render('totale', { totale });
+ }
