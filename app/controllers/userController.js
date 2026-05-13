@@ -32,8 +32,3 @@ exports.subtractOne = (req, res) => {
   res.redirect('/users');
  }
 
- exports.totale = (req, res) => {
-  const { id } = req.params;
-  const totale = User.totale(id);
-  res.render('totale', { totale });
- }

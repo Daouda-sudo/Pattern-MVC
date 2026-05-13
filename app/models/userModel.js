@@ -28,16 +28,7 @@ const User = {
 
     }
   },
-  totale: (id) => {
-    for(let i = 0; i<users.length; i++){
-       if(users[i].id ==  parseInt(id)){
-        let n = parseInt(users[i].numero)
-        let p = parseInt(users[i].prezzo)
-        let y = n*p;
-        return y;
-      }
-    }
-  }
+  
 };
 
 module.exports = User;

@@ -9,5 +9,4 @@ router.post('/users', userController.createUser);
 router.post('/users/delete/:id', userController.deleteUser);
 router.post('/users/add/:id/:numero', userController.addOne);
 router.post('/users/subtract/:id/:numero', userController.subtractOne);
-router.get('/users/totale/:id', userController.totale);
 module.exports = router;
